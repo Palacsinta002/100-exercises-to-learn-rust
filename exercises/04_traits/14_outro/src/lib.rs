@@ -9,7 +9,6 @@
 //
 // Tests are located in the `tests` folder—pay attention to the visibility of your types and methods.
 
-use std::num::Saturating;
 use std::ops::Add;
 
 #[derive(Debug, Clone, Copy, PartialEq)]
@@ -41,7 +40,7 @@ impl From<&u8> for SaturatingU16{
     }
 }
 
-impl std::ops::Add for SaturatingU16 {
+impl Add for SaturatingU16 {
     type Output = SaturatingU16;
     fn add(self, other: Self) -> Self::Output {
         self + other.value
